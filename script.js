@@ -186,17 +186,87 @@
 // 1) Declaration Phase
 // 2) Execution Phase
 
-debugger;
-console.log("Start");
-console.log(a);
-var b;
-console.log(b);
-let x;
-console.log(x, b);
-var a = 100;
-x = 40;
-console.log(a, x);
-const z = 1000;
-a = 20;
-console.log(a, x, b);
-console.log("End");
+// debugger;
+// console.log("Start");
+// console.log(a);
+// var b;
+// console.log(b);
+// let x;
+// console.log(x, b);
+// var a = 100;
+// x = 40;
+// console.log(a, x);
+// const z = 1000;
+// a = 20;
+// console.log(a, x, b);
+// console.log("End");
+
+//! FUNCTIONS :
+// There are 10 types of functions:
+
+//! 1) Named Function : a function which has name
+//! NOTE: function hoisting is ONLY possible in named function
+
+// greet(); // <--- due to function hoisting
+
+// function greet() {
+//   // function declaration
+//   console.log("I am Named Function");
+// }
+
+// greet(); // <--- function call
+
+//! GEC using Named Function
+// console.log("Start");
+// console.log(a);
+// function Demo() {
+//   console.log("I am demo");
+// }
+// console.log(Demo);
+// var a;
+// Student();
+// a = 100;
+// function Student() {
+//   let fullname = "John Doe";
+//   console.log(fullname);
+// }
+// Demo();
+// console.log(a);
+// console.log("End");
+
+//! EXAMPLE 2
+// console.log("Start");
+// greet();
+// let a = 20;
+// console.log(b);
+// function greet() {
+//   var a = 100;
+//   console.log(a);
+// }
+// var b = 30;
+// function demo() {
+//   const c = 30;
+//   console.log(c);
+// }
+// a = 90;
+// demo();
+// console.log("End");
+
+//! 2) ANONYMOUS FUNCTION : function without name
+// function (){}
+
+//! 3) FUNCTION EXPRESSION : used to call anonymous function
+// const a1 = function () {
+//   console.log("I am Function expression");
+// };
+
+// a1();
+
+//! 4) PARAMETRIZED FUNCTION
+// n1 and n2 are parameters
+function sum(n1 = 0, n2 = 0) {
+  console.log(n1 + n2);
+}
+sum(10, 20); // here 10 and 20 are arguements
+
+sum(100);
