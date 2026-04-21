@@ -264,9 +264,92 @@
 
 //! 4) PARAMETRIZED FUNCTION
 // n1 and n2 are parameters
-function sum(n1 = 0, n2 = 0) {
-  console.log(n1 + n2);
-}
-sum(10, 20); // here 10 and 20 are arguements
+// function sum(n1 = 0, n2 = 0) {
+//   console.log(n1 + n2);
+// }
+// sum(10, 20); // here 10 and 20 are arguements
 
-sum(100);
+// sum(100);
+
+//! 5) REST PARAMETERIZED FUNCTION
+// function demo(a, b, ...c) {
+//   console.log(a, b);
+
+//   console.log("Rest", c); //[30, 40, 50, 60, 70]
+//   console.log(arguments); // Array-Like Object
+
+//   //! to check array is pure or not --> Array.isArray() --> returns boolean
+//   console.log(Array.isArray(c)); // true
+//   console.log(Array.isArray(arguments)); // false
+// }
+// demo(10, 20, 30, 40, 50, 60, 70);
+
+//! 6) NESTED FUNCTION
+
+// //! EXAMPLE 1
+// function Parent() {
+//   let money = 80000;
+//   console.log(money);
+
+//   function Child() {
+//     let savings = 2000;
+//     console.log(savings);
+//   }
+//   Child();
+// }
+
+// Parent();
+
+//! CLOSURE : it is a temporary memory which is created whenever we use parent function's property inside child function
+
+//! NOTE : Closures are used for data hiding
+
+//! LEXICAL SCOPING : The ability of js-engine to search a variable outside of its current scope
+
+// //! EXAMPLE 2
+// debugger
+// function Parent() {
+//   let money = 80000;
+//   console.log(money);
+
+//   function Child() {
+//     let savings = 2000;
+//     console.log(savings + money);
+//   }
+//   Child();
+// }
+
+// Parent();
+
+//! EXAMPLE 3
+// debugger
+// function Parent() {
+//   let money = 80000;
+//   console.log(money);
+
+//   function Child() {
+//     let savings = 2000;
+//     console.log(savings + money);
+//   }
+
+//   return Child;
+// }
+
+// let fun = Parent();
+// fun();
+
+//! DATA HIDING EXAMPLE
+
+function counter() {
+  let count = 0;
+
+  return function () {
+    count++;
+    console.log("Count is ", count);
+  };
+}
+let f1 = counter();
+f1();
+f1();
+f1();
+f1();
