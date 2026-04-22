@@ -339,17 +339,103 @@
 // fun();
 
 //! DATA HIDING EXAMPLE
+// function counter() {
+//   let count = 0;
 
-function counter() {
-  let count = 0;
+//   return function () {
+//     count++;
+//     console.log("Count is", count);
+//   };
+// }
+// let f1 = counter();
+// f1();
+// f1();
 
-  return function () {
-    count++;
-    console.log("Count is ", count);
-  };
+//! 7) HIGHER ORDER FUNCTION & CALLBACK FUNCTION
+// HOF :- A function which either accept another function as an arguement or returns a function. OR BOTH
+// CB :- A function which passes as an arguement to another function.
+
+//! EXAMPLE 1:
+function demo1() {
+  // demo1 is HOF --> bcoz it returns a function
+  return function () {};
 }
-let f1 = counter();
-f1();
-f1();
-f1();
-f1();
+
+//! EXAMPLE 2:
+function demo2(fun) {
+  // demo2 is HOF --> bcoz it accepts a function as arguement
+}
+demo2(function () {});
+
+//! EXAMPLE 3:
+function demo3(fn) {
+  // demo3 is HOF --> bcoz it accepts a function as arguement and it returns a function
+  return function () {};
+}
+demo3(function () {});
+
+//! EXAMPLE :- HOF and CB functions are used in map(), forEach(), find(), filter()...etc
+
+//! 8) IMMEDIATLY INVOKED FUNCTION EXPRESSION ( IIFE )
+// IIFE should be called immediatly after the declaration
+// NOTE :- IIFE function can be called only once during execution.
+
+// let val = (function () {
+//   let count = 0;
+
+//   return function () {
+//     count++;
+//     console.log("Count is", count);
+//   };
+// })();
+// val()
+// val()
+// val()
+
+//! 9) ARROW FUNCTION : introduced in ES6, for short syntax
+
+// // WAY 1
+// let a1 = () => {
+//   console.log("I am Arrow function 1");
+// };
+// a1();
+
+// // WAY 2 : if no parameter () can be replaced with _
+// let a2 = (_) => {
+//   console.log("I am Arrow function 2");
+// };
+// a2();
+
+// // WAY 3 : if only one parameter , ignore ()
+// let a3 = (x) => {
+//   console.log("I am Arrow function 3", x);
+// };
+// a3(10);
+
+// // WAY 4 : if only one line of code , ignore {}
+// let a4 = () => console.log("I am Arrow function 4");
+// a4();
+
+// // WAY 5 : Explicit return, {} and "return" keyword is mandatory
+// let a5 = () => {
+//   return "I am Arrow function 5";
+// };
+// console.log(a5());
+
+// // WAY 6 : Implicit return, {} and "return" keyword not required
+// let a6 = () => "I am Arrow function 6";
+// console.log(a6());
+
+// // WAY 7 : Implicit return using (), {} and "return" keyword not required
+// let a7 = () => ({ name: "John" });
+// console.log(a7());
+
+//! 10) CONSTRUCTOR FUNCTION : used to create objects
+function Student(studentName) {
+  this.name = studentName;
+}
+
+let s1 = new Student("John");
+let s2 = new Student("Jane");
+console.log(s1); // Student {name: 'John'}
+console.log(s2); // Student {name: 'Jane'}
