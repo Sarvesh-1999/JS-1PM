@@ -431,11 +431,123 @@ demo3(function () {});
 // console.log(a7());
 
 //! 10) CONSTRUCTOR FUNCTION : used to create objects
-function Student(studentName) {
-  this.name = studentName;
-}
+// function Student(studentName) {
+//   this.name = studentName;
+// }
 
-let s1 = new Student("John");
-let s2 = new Student("Jane");
-console.log(s1); // Student {name: 'John'}
-console.log(s2); // Student {name: 'Jane'}
+// let s1 = new Student("John");
+// let s2 = new Student("Jane");
+// console.log(s1); // Student {name: 'John'}
+// console.log(s2); // Student {name: 'Jane'}
+
+//! OBJECT : used to store data in key and value pair
+
+// In JS we can create object in 3 ways
+//! 1) using object literals <--- MOSTLY USED
+// let obj1 = { name: "John" };
+
+//! 2) using Object constructor
+// let obj2 = new Object({ name: "Jane" });
+
+//! 3) using Constructor function
+
+//! CRUD using objects
+
+// // CREATE
+// let Employee = {
+//   id: 1,
+//   firstName: "John",
+//   lastName: "Doe",
+// };
+// console.log(Employee);
+
+// //! READ :- we can read in 2 ways
+
+// // 1) using dot operator
+// console.log(Employee.firstName); // John
+
+// // 2) using square brackets :- ObjectName["key"]
+// console.log(Employee["lastName"]); // Doe
+
+// //! ONLY WAY TO ITERATE AN OBJECT using forIn loop
+// for (let x in Employee) {
+//   console.log(Employee[x]);
+// }
+
+// //! UPDATE :- objectName.existingKey = newValue
+// Employee.id = "1Ac2";
+// console.log(Employee);
+
+// //! NEW KEY :- objectName.newKey = newValue
+// Employee.salary = 60000;
+// Employee.demo = "I am Demo";
+// console.log(Employee);
+
+// //! DELETE :
+// delete Employee.demo
+// console.log(Employee);
+
+//! SHALLOW COPY AND DEEP COPY
+// let obj1 = {
+//   id: 1,
+//   name: "Raj",
+// };
+
+// // let obj2 = obj1; //! both poinst to same reference
+// // let obj2 = { ...obj1 }; //! SHALLOW COPY - WAY 1
+// let obj2 = Object.assign({}, obj1); //! SHALLOW COPY - WAY 2
+
+// obj2.name = "Rahul";
+
+// console.log(obj1);
+// console.log(obj2);
+
+//! DEEP COPY EXAMPLE
+// let student1 = {
+//   id: 1,
+//   name: "John Doe",
+//   address: { city: "Delhi" },
+// };
+
+// // let student2 = { ...student1 };//! This is Shallow Copy
+// let student2 = structuredClone(student1); // ! DEEP COPY
+
+// student2.name = "Rahul";
+// student2.address.city = "Noida";
+
+// console.log(student1);
+// console.log(student2);
+
+//! OBJECT METHODS
+let obj1 = {
+  id: 1,
+  name: "John Doe",
+  salary: 60000,
+};
+
+//! Object.keys()
+let keys = Object.keys(obj1);
+console.log(keys); // ["id","name","salary"]
+
+//! Object.values()
+let values = Object.values(obj1);
+console.log(values); // [1,"John Doe",60000]
+
+//! Object.entries()
+let keyAndValue = Object.entries(obj1);
+console.log(keyAndValue); // [ ["id",1 ] , ["name","john doe"] , ["salary", 60000] ]
+
+//! Object.fromEntries()
+let convertedObj = Object.fromEntries(keyAndValue);
+console.log(convertedObj); // {id: 1, name: 'John Doe', salary: 60000}
+
+//! OBJECT DESTRUCTURING
+let student = {
+  id: 1,
+  studentName: "John Doe",
+};
+
+let { studentName, rollNo = null } = student;
+
+console.log(studentName);
+console.log(rollNo);
