@@ -519,35 +519,124 @@ demo3(function () {});
 // console.log(student2);
 
 //! OBJECT METHODS
-let obj1 = {
-  id: 1,
-  name: "John Doe",
-  salary: 60000,
-};
+// let obj1 = {
+//   id: 1,
+//   name: "John Doe",
+//   salary: 60000,
+// };
 
-//! Object.keys()
-let keys = Object.keys(obj1);
-console.log(keys); // ["id","name","salary"]
+// //! Object.keys()
+// let keys = Object.keys(obj1);
+// console.log(keys); // ["id","name","salary"]
 
-//! Object.values()
-let values = Object.values(obj1);
-console.log(values); // [1,"John Doe",60000]
+// //! Object.values()
+// let values = Object.values(obj1);
+// console.log(values); // [1,"John Doe",60000]
 
-//! Object.entries()
-let keyAndValue = Object.entries(obj1);
-console.log(keyAndValue); // [ ["id",1 ] , ["name","john doe"] , ["salary", 60000] ]
+// //! Object.entries()
+// let keyAndValue = Object.entries(obj1);
+// console.log(keyAndValue); // [ ["id",1 ] , ["name","john doe"] , ["salary", 60000] ]
 
-//! Object.fromEntries()
-let convertedObj = Object.fromEntries(keyAndValue);
-console.log(convertedObj); // {id: 1, name: 'John Doe', salary: 60000}
+// //! Object.fromEntries()
+// let convertedObj = Object.fromEntries(keyAndValue);
+// console.log(convertedObj); // {id: 1, name: 'John Doe', salary: 60000}
 
 //! OBJECT DESTRUCTURING
-let student = {
-  id: 1,
-  studentName: "John Doe",
-};
+// let student = {
+//   id: 1,
+//   studentName: "John Doe",
+// };
 
-let { studentName, rollNo = null } = student;
+// let { studentName } = student;
+// console.log(studentName);
 
-console.log(studentName);
-console.log(rollNo);
+// let employee = {
+//   id: 2,
+//   fullname: {
+//     firstName: "John",
+//     lastName: "Doe",
+//   },
+//   age: 25,
+//   address: {
+//     city: "Delhi",
+//   },
+// };
+
+// let { fullname:{firstName} , address:{city} } = employee;
+// console.log(firstName, city);
+
+// let obj1 = {
+//   username: "Jane",
+// };
+
+// let { username, salary = null, designation: desg = "NA" } = obj1;
+// console.log(username, salary, desg);
+
+// let obj2 = {
+//   username: "John",
+//   salary: 80000,
+// };
+
+// let { username: name, salary: sal } = obj2;
+// console.log(name, sal);
+
+//! ARRAY DESTRUCTURING
+// let arr1 = [10, 20, 30, 40, 50];
+// let [a1, a2, a3, a4, a5] = arr1;
+// console.log(a1, a5);
+
+// let arr2 = [100, 200, 300, 400, 500];
+// let [, b1, , b2] = arr2;
+// console.log(b1, b2);
+
+// let arr3 = [1000, 2000, [10, ["Hello", "Bye"], 20]];
+// // 1000 , 10 , bye , 20
+// let [x1, , [x2, [, x3], x4]] = arr3;
+// console.log(x1, x2, x3, x4);
+
+//! ARRAYS
+
+//! There are 2 ways
+//! 1) array literals <--- mostly used
+// let arr1 = [10];
+// console.log(arr1); // length is 1
+
+//! 2) array constuctor
+// let arr2 = new Array(10);
+// console.log(arr2); // length is 10
+
+//! ARRAY METHODS
+let arr1 = [10, 20, 30, 40, 50];
+console.log(arr1);
+
+//! push() :Appends new elements to the end of an array, and returns the new length of the array.
+arr1.push(60, 70, 80);
+console.log(arr1);
+
+//! pop(): Removes the last element from an array and returns it. If the array is empty, undefined is returned and the array is not modified.
+arr1.pop();
+console.log(arr1);
+
+//! unshift(): Inserts new elements at the start of an array, and returns the new length of the array.
+arr1.unshift(1000, 2000, 3000);
+console.log(arr1);
+
+//! shift() : Removes the first element from an array and returns it. If the array is empty, undefined is returned and the array is not modified.
+arr1.shift();
+console.log(arr1);
+
+//! splice(index, deleteCount, newElements)
+// NOTE : it modifies the original array
+let arr2 = [10, 20, 30, 40, 50];
+
+//! remove
+// arr2.splice(2, 2);
+// console.log(arr2); // [10, 20, 50]
+
+//! add
+// arr2.splice(1, 0, 15);
+// console.log(arr2); // [10, 15, 20, 30, 40, 50]
+
+//! add and remove
+arr2.splice(1, 3, 100);
+console.log(arr2); // [10, 100, 50]
