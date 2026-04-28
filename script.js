@@ -606,28 +606,28 @@ demo3(function () {});
 // console.log(arr2); // length is 10
 
 //! ARRAY METHODS
-let arr1 = [10, 20, 30, 40, 50];
-console.log(arr1);
+// let arr1 = [10, 20, 30, 40, 50];
+// console.log(arr1);
 
 //! push() :Appends new elements to the end of an array, and returns the new length of the array.
-arr1.push(60, 70, 80);
-console.log(arr1);
+// arr1.push(60, 70, 80);
+// console.log(arr1);
 
 //! pop(): Removes the last element from an array and returns it. If the array is empty, undefined is returned and the array is not modified.
-arr1.pop();
-console.log(arr1);
+// arr1.pop();
+// console.log(arr1);
 
 //! unshift(): Inserts new elements at the start of an array, and returns the new length of the array.
-arr1.unshift(1000, 2000, 3000);
-console.log(arr1);
+// arr1.unshift(1000, 2000, 3000);
+// console.log(arr1);
 
 //! shift() : Removes the first element from an array and returns it. If the array is empty, undefined is returned and the array is not modified.
-arr1.shift();
-console.log(arr1);
+// arr1.shift();
+// console.log(arr1);
 
 //! splice(index, deleteCount, newElements)
 // NOTE : it modifies the original array
-let arr2 = [10, 20, 30, 40, 50];
+// let arr2 = [10, 20, 30, 40, 50];
 
 //! remove
 // arr2.splice(2, 2);
@@ -637,6 +637,111 @@ let arr2 = [10, 20, 30, 40, 50];
 // arr2.splice(1, 0, 15);
 // console.log(arr2); // [10, 15, 20, 30, 40, 50]
 
-//! add and remove
-arr2.splice(1, 3, 100);
-console.log(arr2); // [10, 100, 50]
+// //! add and remove
+// arr2.splice(1, 3, 100);
+// console.log(arr2); // [10, 100, 50]
+
+//! slice(startIndex, endIndex)
+// NOTE : lastIndex always get ignored
+
+// let arr4 = [10, 20, 30, 40, 50];
+
+// let x = arr4.slice(1, 4);
+// console.log(arr4); //! orginal array not modified
+// console.log(x); // return new sliced array
+
+// let y = arr4.slice(-3, -1);
+// console.log(y); //  [30, 40]
+
+// let z = arr4.slice(0, -1);
+// console.log(z);// [10, 20, 30, 40]
+
+//! sort() :Sorts an array in place. This method mutates the array and returns a reference to the same array.
+
+// let arr5 = [8, 9, 2, 1, 4, 6];
+// let x = arr5.sort();
+// console.log(arr5);
+// console.log(x); // here x is also having reference of arr5
+
+// //! LEXOGRAPHICAL SORTING
+// let arr6 = [90, 673, 10, 8, 38, 99, 100];
+// // arr6.sort();
+// // console.log(arr6); // [10, 100, 38, 673, 8, 90, 99]
+
+// // if a-b = +ve --> swap
+// // if a-b = -ve || 0 --> dont swap
+// arr6.sort((a, b) => a - b);
+// console.log(arr6); // [8 , 10, 38, 90 , 99, 100, 673]
+
+// let arr7 = [10, 20, 30, 40];
+
+// //! forEach(()=>{}) : returns undefined
+// let val1 = arr7.forEach((ele, idx, array) => {
+//   console.log(ele, idx, array);
+//   return "Hii";
+// });
+
+// console.log("forEach", val1);
+// console.log("--------------------------");
+
+// //! map(()=>{}) :  returns new array
+// let val2 = arr7.map((ele, idx, array) => {
+//   console.log(ele, idx, array);
+//   return ele + 5;
+// });
+// console.log("map", val2); // [15,25,35,45]
+
+// let arr8 = [19, 200, 30, 356, 79, 6, 1];
+
+// //! filter(()=>{})
+// let val3 = arr8.filter((ele, idx, array) => {
+//   return ele > 50;
+// });
+// console.log("Filtered array", val3); //  [200, 356, 79]
+
+// //! find(()=>{})
+// let val4 = arr8.find((ele, idx, array) => {
+//   return ele > 50;
+// });
+// console.log(val4); // 200
+
+// //! findIndex(()=>{})
+// let val5 = arr8.findIndex((ele, idx, array) => {
+//   return ele > 50;
+// });
+// console.log(val5); // 1
+
+// //! reduce(()=>{} , accumulatorValue)
+// let arr9 = [10, 20, 30, 40, 50];
+// //--> using for loop
+// let sum = 0;
+// for (let i = 0; i < arr9.length; i++) {
+//   sum += arr9[i];
+// }
+// console.log("sum is", sum);
+
+// //--> using reduce
+// let val6 = arr9.reduce((sum, ele, idx, array) => {
+//   console.log(sum, ele);
+//   return sum + ele;
+// });
+// console.log("Sum is", val6);
+
+//! JSON - Javascript object notation
+let user = {
+  id: 1,
+  username: "John",
+  email: "john@gmail.com",
+};
+console.log(user);
+console.log(typeof user);
+
+// convert JS Object to JSON ---> JSON.stringify()
+let jsonData = JSON.stringify(user);
+console.log(jsonData);
+console.log(typeof jsonData);
+
+// convert JSON to JS Object ---> JSON.parse()
+let jsObject = JSON.parse(jsonData);
+console.log(jsObject);
+console.log(typeof jsObject);
