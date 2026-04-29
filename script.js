@@ -727,21 +727,120 @@ demo3(function () {});
 // });
 // console.log("Sum is", val6);
 
-//! JSON - Javascript object notation
-let user = {
-  id: 1,
-  username: "John",
-  email: "john@gmail.com",
-};
-console.log(user);
-console.log(typeof user);
+// //! JSON - Javascript object notation
+// let user = {
+//   id: 1,
+//   username: "John",
+//   email: "john@gmail.com",
+// };
+// console.log(user);
+// console.log(typeof user);
 
-// convert JS Object to JSON ---> JSON.stringify()
-let jsonData = JSON.stringify(user);
-console.log(jsonData);
-console.log(typeof jsonData);
+// //! convert JS Object to JSON ---> JSON.stringify()
+// let jsonData = JSON.stringify(user);
+// console.log(jsonData);
+// console.log(typeof jsonData);
 
-// convert JSON to JS Object ---> JSON.parse()
-let jsObject = JSON.parse(jsonData);
-console.log(jsObject);
-console.log(typeof jsObject);
+// //! convert JSON to JS Object ---> JSON.parse()
+// let jsObject = JSON.parse(jsonData);
+// console.log(jsObject);
+// console.log(typeof jsObject);
+
+//! STRINGS : COLLECTION OF CHARACTERS
+//! using single quotes , double quotes and backticks
+// let str1 = "Hello";
+// let str2 = "World";
+// let str3 = `Hello Universe`; // <-- template string
+
+// console.log(str1, typeof str1);
+// console.log(str2, typeof str2);
+// console.log(str3, typeof str3);
+
+//! ADVANTAGE OF USING TEMPLATE STRING => backticks ``
+//1) multi-line string
+//2) string interpolation <-- alternative of string concatination
+
+// let firstName = "John";
+// let lastName = "Doe";
+// let age = 20;
+
+// let sentence = `Hi all,
+// My name is ${firstName} ${lastName}. My age is ${age}
+// `;
+// console.log(sentence);
+
+//! length <-- property
+// console.log(firstName.length);// 4
+
+//! STRING METHODS
+
+//! slice(startIndex, endIndex)
+let str1 = "javascript";
+console.log(str1);
+
+console.log(str1.slice(0, 4)); // Java
+console.log(str1.slice(-10, -6)); // Java
+console.log(str1.slice(-10, 4)); // Java
+console.log(str1.slice(-6)); // script
+
+let description =
+  "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquam, unde asperiores autem ratione saepe perferendis iure reiciendis dignissimos a culpa maiores quibusdam, ab delectus iste odio aut molestias, eaque placeat.";
+
+console.log(description.slice(0, 51) + "...");
+console.log(`${description.slice(0, 50)}...`);
+
+//! substring(startIndex, endIndex) : similar to slice() but it cannot accept -ve indexs
+console.log(str1.substring(0, 4));
+console.log(str1.substring(-10, -6));
+
+//! substr(startIndex , length)
+console.log(str1.substr(0, 4));
+
+//! split()
+let str2 = "react js";
+console.log(str2.split()); // ['react js']
+console.log(str2.split(" ")); //  ['react', 'js']
+console.log(str2.split("")); // ['r', 'e', 'a', 'c', 't', ' ', 'j', 's']
+console.log(str2.split("a")); // ['re', 'ct js']
+
+//! toString()
+let arr = ["a", "b", "c"];
+console.log(arr.toString()); // a,b,c
+console.log(typeof arr.toString()); // string
+
+//! join()
+console.log(arr.join()); // a,b,c
+console.log(arr.join("")); // abc
+console.log(arr.join(" ")); // a b c
+console.log(arr.join("0")); // a0b0c
+
+function isPallindrome(word) {
+  let val = word.split("").reverse().join("");
+  if (val === word) {
+    console.log("Pallindrome");
+    return;
+  }
+  console.log("Not a Pallindrome");
+}
+isPallindrome("xyz");
+isPallindrome("racecar");
+
+//! padStart(length , fillString) and padEnd(length , fillString)
+let phoneNo = String(9876543210);
+console.log(phoneNo.slice(0, 6).padEnd(10, "X")); // -> 987654XXXX
+console.log(phoneNo.slice(6).padStart(10, "X")); // -> XXXXXX3210
+
+//! trimStart() ,trimEnd(), trim()
+let ename = "      Clark      ";
+console.log(ename.trimStart());
+console.log(ename.trimEnd());
+console.log(ename.trim());
+
+//! toUpperCase() , toLowerCase()
+let str4 = "ReAcTjS";
+console.log(str4.toLowerCase());
+console.log(str4.toUpperCase());
+
+//! charAt() , charCodeAt()
+console.log(str4.charAt(2)); // A
+console.log(str4.charCodeAt(2)); // 65
