@@ -912,20 +912,96 @@
 
 // console.log("End");
 
-//! PROMISE
+//! PROMISE :
+// A Promise is a special object that represents the eventual completion (or failure) of an asynchronous operation and its resulting value.
 
-let p1 = fetch("https://jsonplaceholder.typicode.com/users");
-console.log(p1);
+//!The Three States of a Promise
+// A Promise is always in one of three states: Pending (ongoing), Fulfilled (successful), or Rejected (failed).
 
-p1.then((resp) => {
-  let p2 = resp.json();
-  console.log(p2);
+// //! HOW TO CREATE A PROMISE
+// let flag = true;
+// let p1 = new Promise((resolve, reject) => {
+//   if (flag) {
+//     resolve({ success: true, data: "Hello World" });
+//   } else {
+//     reject({ success: false, data: "backend err" });
+//   }
+// });
+// console.log(p1);
 
-  p2.then((data) => {
-    console.log(data);
-  });
-});
+// //! HOW TO HANDLE A PROMISE
+//! //1) using then(), catch() and finally()
+// p1.then((resp) => {
+//   console.log("API Call Successfully ✅", resp.data);
+//   document.writeln(resp.data);
+// });
 
-p1.catch((err) => {
-  console.log("Something went wrong", err);
-});
+// p1.catch((err) => {
+//   console.log("API Call Failed ❌", err.data);
+//   document.writeln(err.data);
+// });
+
+// p1.finally(() => {
+//   console.log("API CALL PERFORMED ⭐");
+// });
+
+//! 2) using async/await functions <--- Modern (simple) approch
+// In JavaScript, async and await are keywords used to write asynchronous code that looks and behaves like synchronous code. They are "syntactic sugar" built on top of Promises to make code cleaner and easier to read.
+
+// await Keyword: Can only be used inside an async function . It pauses the execution of the function until the promise is settled (either resolved or rejected). Once settled, it returns the resolved value or throws an error if rejected.
+
+// let flag = false;
+
+// async function getData() {
+//   try {
+//     let data = await new Promise((resolve, reject) => {
+//       if (flag) {
+//         resolve({ success: true, data: "Hello World" });
+//       } else {
+//         reject({ success: false, data: "backend err" });
+//       }
+//     });
+//     console.log(data);
+//     document.writeln(data.data);
+//   } catch (err) {
+//     console.log(err);
+//     document.writeln(err.data);
+//   }
+// }
+// getData();
+
+// //! using fetch() method
+// const API_URL = "https://dummyjson.com/posts";
+// let p1 = fetch(API_URL);
+// console.log(p1);
+
+// p1.then((resp) => {
+//   let p2 = resp.json(); //json() converts JSON data to JS , returns a Promise with JS data
+
+//   p2.then((data) => {
+//     console.log(data.posts);
+//   });
+
+//   p2.catch((err) => {
+//     console.log(err);
+//   });
+// });
+
+// p1.catch((err) => {
+//   console.log(err);
+// });
+
+//! using async/await method
+const API_URL = "https://dummyjson.com/posts";
+
+async function getPosts() {
+  try {
+    let resp = await fetch(API_URL);
+    let data = await resp.json();
+    console.log(data.posts);
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+getPosts();
