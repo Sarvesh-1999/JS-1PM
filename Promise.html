@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+        // let p1 = fetch("https://dummyjson.com/products");
+        // console.log(p1);
+
+        // p1.then((resp) => {
+        //   let p2 = resp.json();
+        //   console.log(p2);
+
+        //   p2.then((data) => {
+        //     console.log(data.products);
+        //   });
+
+        //   p2.catch((err) => {
+        //     console.log(err);
+        //   });
+        // });
+
+        // p1.catch((err) => {
+        //   console.log(err);
+        // });
+
+        // p1.finally(() => {
+        //   console.log("API CALL DONE");
+        // });
+
+      async function getProducts() {
+        try {
+          let resp = await fetch("https://dummyjson.com/products");
+          let data = await resp.json();
+          console.log(data.products);
+        } catch (error) {
+          console.log(error);
+        }
+      }
+      getProducts();
+    </script>
+  </body>
+</html>
