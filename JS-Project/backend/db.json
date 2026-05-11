@@ -1,0 +1,35 @@
+{
+  "users": [
+    {
+      "username": "John Doe",
+      "email": "john@gmail.com",
+      "password": "123456",
+      "id": "5ekH6lgozWo"
+    },
+    {
+      "username": "Henry",
+      "email": "henry@gmail.com",
+      "password": "123456",
+      "id": "KGRYLARJZyU"
+    },
+    {
+      "username": "Jane",
+      "email": "jane@gmail.com",
+      "password": "9089077",
+      "id": "aKoZy1-OSZ8"
+    },
+    {
+      "username": "test",
+      "email": "test@gmail.com",
+      "password": "123",
+      "id": "XvnGYmU07iA"
+    },
+    {
+      "username": "test2",
+      "email": "test2@gmail.com",
+      "password": "123",
+      "id": "3LuXLXag2tY"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}

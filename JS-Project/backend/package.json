@@ -1,0 +1,8 @@
+{
+  "scripts": {
+    "start": "npx json-server db.json -w --port=5000"
+  },
+  "dependencies": {
+    "json-server": "^1.0.0-beta.15"
+  }
+}
