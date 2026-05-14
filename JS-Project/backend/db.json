@@ -7,21 +7,15 @@
       "id": "5ekH6lgozWo"
     },
     {
-      "username": "Henry",
-      "email": "henry@gmail.com",
-      "password": "123456",
-      "id": "KGRYLARJZyU"
-    },
-    {
       "username": "Jane",
       "email": "jane@gmail.com",
       "password": "9089077",
       "id": "aKoZy1-OSZ8"
     },
     {
-      "username": "test",
+      "username": "Test User",
       "email": "test@gmail.com",
-      "password": "123",
+      "password": "test@123",
       "id": "XvnGYmU07iA"
     },
     {
