@@ -29,6 +29,12 @@
       "email": "rahul@gmail.com",
       "password": "123",
       "id": "vop1RCgAiQU"
+    },
+    {
+      "username": "Sarvesh",
+      "email": "sarvesh@gmail.com",
+      "password": "123",
+      "id": "rfsivnqvN3Y"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

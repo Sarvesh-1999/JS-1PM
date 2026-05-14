@@ -3,29 +3,31 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Products – Q-Shop</title>
     <link rel="stylesheet" href="../styles/index.css" />
     <script src="../scripts/products.js" defer></script>
   </head>
   <body>
     <main class="container">
-      <header class="navbar">
-        <div class="logo">Q-Shop</div>
-
+      <header class="navbar glass">
+        <div class="logo">🛍️ Q-Shop</div>
         <nav>
-          <a href="../index.html">Home</a>
-          <button id="logout-btn">logout</button>
-          <button id="delete-btn">delete</button>
-          <button id="edit-btn">edit</button>
+          <button id="edit-btn">✏️ Edit Profile</button>
+          <button id="logout-btn">🚪 Logout</button>
+          <button id="delete-btn">🗑️ Delete Account</button>
         </nav>
       </header>
 
-      <h1>
-        Welcome
-        <span id="login-username"></span>
-      </h1>
+      <div class="welcome-banner">
+        <h2>👋 Welcome, <span id="login-username"></span>!</h2>
+        <p>✨ Discover our handpicked collection</p>
+      </div>
 
       <section class="products-container"></section>
+
+      <footer class="footer">
+        <p>© 2025 Q-Shop | enjoy shopping 🛒</p>
+      </footer>
     </main>
   </body>
 </html>

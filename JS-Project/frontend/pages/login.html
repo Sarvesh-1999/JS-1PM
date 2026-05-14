@@ -3,34 +3,41 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Login – Q-Shop</title>
     <link rel="stylesheet" href="../styles/index.css" />
     <script src="../scripts/login.js" defer></script>
   </head>
   <body>
     <main class="container">
-      <header class="navbar">
-        <div class="logo">Q-Shop</div>
-
+      <header class="navbar glass">
+        <div class="logo">🛍️ Q-Shop</div>
         <nav>
-          <a href="../index.html">Home</a>
-          <a href="./login.html">Login</a>
-          <a href="./signup.html">Signup</a>
+          <a href="../index.html">🏠 Home</a>
+          <a href="./login.html">🔐 Login</a>
+          <a href="./signup.html">📝 Signup</a>
         </nav>
       </header>
 
-      <h1>Login</h1>
+      <div class="form-card">
+        <h2>🔐 Welcome Back</h2>
+        <p>Log in to access your account</p>
+        <form id="login-form">
+          <div class="input-group">
+            <label>📧 Email</label>
+            <input type="email" name="email" id="email" placeholder="you@example.com" required />
+          </div>
+          <div class="input-group">
+            <label>🔒 Password</label>
+            <input type="password" name="password" id="password" placeholder="••••••••" required />
+          </div>
+          <button type="submit">➡️ Login</button>
+        </form>
+        <p class="form-footer">New here? <a href="./signup.html">Create an account →</a></p>
+      </div>
 
-      <form id="login-form">
-        <label for="email">Email </label>
-        <input type="text" name="email" id="email" />
-        <br />
-        <label for="password">Password</label>
-        <input type="text" name="password" id="password" />
-        <br />
-        <button>Login</button>
-      </form>
-
+      <footer class="footer">
+        <p>© 2025 Q-Shop | secure & fast</p>
+      </footer>
     </main>
   </body>
 </html>
